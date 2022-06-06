@@ -1,5 +1,5 @@
 #include "Header.h"
-void Skaitymas(std::unordered_map <string, Zodis> m, string failas) {
+void Skaitymas(std::unordered_map <string, Zodis>& m, string failas) {
 
 
     string eil;
@@ -21,9 +21,9 @@ void Skaitymas(std::unordered_map <string, Zodis> m, string failas) {
             std::getline(my_buffer, eil);
                 std::stringstream s(eil);
                 while (s >> elem) {
-                    cout << elem << " ";
+                    if (!m.count(elem)) m[elem] = Zodis{ elem, 1 };
+                    else m[elem].n++;
                 }
-                cout << endl;
         }
         else break;
     }
