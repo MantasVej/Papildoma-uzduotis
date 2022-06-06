@@ -28,3 +28,10 @@ void Skaitymas(std::unordered_map <string, Zodis>& m, string failas) {
         else break;
     }
 }
+
+void Isvedimas(std::unordered_map <string, Zodis>& m, string failas) {
+    std::ofstream fr(failas);
+    for (auto const& s : m)
+        fr << s.first << " " << s.second.n << std::endl;
+    fr.close();
+}

@@ -16,3 +16,4 @@ struct Zodis {
 };
 
 void Skaitymas(std::unordered_map <string, Zodis>&, string);
+void Isvedimas(std::unordered_map <string, Zodis>&, string);
