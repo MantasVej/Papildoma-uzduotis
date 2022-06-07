@@ -2,10 +2,10 @@
 
 int main()
 {
-	string dfailas = "tekstas.txt";
-	string rfailas = "rezultatai.txt";
-	std::unordered_map <string, Zodis> Tekstas;
-	Skaitymas(Tekstas, dfailas);
-	Isvedimas(Tekstas, rfailas);
+	string failas = "tekstas.txt";
+	std::unordered_map <string, Zodis> T;
+	std::unordered_set <string> T1;
+	Zodziai(T, failas);
+	URL(T1, failas);
 	return 0;
 }
