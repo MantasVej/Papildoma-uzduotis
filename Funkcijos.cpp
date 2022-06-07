@@ -1,15 +1,24 @@
-#include "Header.h"
+﻿#include "Header.h"
 
+/**
+* Žodzių pasikartojimo skaičiavimo funkcija
+*/
 void Zodziai(std::unordered_map <string, Zodis>& m, string failas) {
     Skaitymas(m, failas);
     Isvedimas(m);
 }
+/**
+* Funkcija patikrina, ar jai paduotas kintamasis yra specialusis simbolis arba skaičius
+*/
 bool Simbolis(char s) {
-    std::unordered_set <char> chars({ '.',',',':',';','?','!','"','(',')','[', ']','{','}','@','=','~','+','-','*','/','%','<','>', '�', '\''});
+    std::unordered_set <char> chars({ '.',',',':',';','?','!','"','(',')','[', ']','{','}','@','=','~','+','-','*','/','%','<','>', '©', '\''});
     if (chars.count(s) || (isdigit((unsigned char)s))) return true;
     else return false;
 }
-
+/**
+* Skaito teksto failą po vieną eilutę, pašalina skaičius ir specialius simbolius,
+* Skirtingus žodžius įrašo į unordered_map tipo konteinerį, suskaičiuoja kiek kartų žodis pasikartoja ir kuriose eilutėse
+*/
 void Skaitymas(std::unordered_map <string, Zodis>& m, string failas) {
 
     string eil;
@@ -45,7 +54,9 @@ void Skaitymas(std::unordered_map <string, Zodis>& m, string failas) {
         else break;
     }
 }
-
+/**
+* Išveda žodžius, kurie pasikartoja daugiau nei 1 kartą, kiek kartų jie pasikartoja ir kuriose eilutėse
+*/
 void Isvedimas(std::unordered_map <string, Zodis>& m) {
     std::ofstream fr("rezultatai.txt");
     fr << "--------------------------------------------------------------------------------------------------" << endl;
@@ -62,7 +73,9 @@ void Isvedimas(std::unordered_map <string, Zodis>& m) {
     fr << "----------------------------------------------------------------------------------------" << endl;
     fr.close();
 }
-
+/**
+* Ieško tekste URL adresų, rastus skirtingus adresus įrašo į unordered_set tipo konteinerį, baigus paiešką adresai išvedami į ekraną
+*/
 void URL(std::unordered_set <string>& m, string failas) {
     string elem;
     std::stringstream my_buffer;

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -15,9 +15,22 @@ using std::setw;
 using std::string;
 using std::vector;
 
+/**
+* Struktūra, kurioje saugoma informacija apie žodį
+*/
+
 struct Zodis {
+	/**
+	* Žodis
+	*/
 	string zodis;
+	/**
+	* Pasikartojimų skaičius
+	*/
 	int n;
+	/**
+	* Eilučių numeriai
+	*/
 	vector<int> eilutes;
 };
 void Zodziai(std::unordered_map <string, Zodis>& m, string);

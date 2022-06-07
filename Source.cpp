@@ -1,5 +1,9 @@
-#include "Header.h"
+﻿#include "Header.h"
 
+/**
+* Programa skaičiuoja kiek kartų tekste pasikartoja kiekvienas žodis
+* Randa URL adresus tekste
+*/
 int main()
 {
 	string failas = "tekstas.txt";
